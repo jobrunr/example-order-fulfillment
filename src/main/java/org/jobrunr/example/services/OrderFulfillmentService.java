@@ -28,9 +28,9 @@ public class OrderFulfillmentService {
         Thread.sleep(5000);
     }
 
-    public void generateDailyReport() throws InterruptedException {
-        // TODO aggregate daily sales, generate PDF and send it to managers
-        LOGGER.info("Sales report: generating daily sales report on {}", Instant.now());
+    public void generateMonthlySalesReport() throws InterruptedException {
+        // TODO aggregate monthly sales, generate PDF and send it to managers
+        LOGGER.info("Sales report: generating monthly sales report on {}", Instant.now());
         Thread.sleep(10000);
     }
 

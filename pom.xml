@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>
-		<jobrunr.version>7.1.0</jobrunr.version>
+		<jobrunr.version>7.1.1</jobrunr.version>
 	</properties>
 	<dependencies>
 		<dependency>

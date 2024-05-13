@@ -20,7 +20,7 @@ This project has 4 packages:
 
 - **org.jobrunr.examples.config**: this package register the [OrderFulfilmentTasksFilter](src/main/java/org/jobrunr/example/tasks/filters/OrderFulfilmentTasksFilter.java)
 - **org.jobrunr.examples.controllers**: this package contains a simple `RestController` called [OrderFulfillmentController](src/main/java/org/jobrunr/example/controllers/OrderFulfillmentController.java), 
-which contains an endpoint to trigger the order fulfillment workflow
+which declares an endpoint to trigger the order fulfillment workflow
 - **org.jobrunr.examples.services**: this package contains [OrderFulfillmentService](src/main/java/org/jobrunr/example/services/OrderFulfillmentService.java), a simple spring service with example order fulfillment methods.
 - **org.jobrunr.examples.tasks**: this package contains [OrderFulfillmentTasks](src/main/java/org/jobrunr/example/tasks/OrderFulfillmentTasks.java) which declares the Jobs for JobRunr to process using the handy annotations
     - Note that the method annotated with `@Recurring` will be automatically picked up by JobRunr
@@ -34,4 +34,4 @@ which contains an endpoint to trigger the order fulfillment workflow
     - To trigger the order fulfillment workflow, open a new tab and go to http://localhost:8080/confirm-order.
     - Visit the dashboard again and see the jobs being processed!
       - Visit http://localhost:8000/jobs to see which states the jobs are in
-    - Visit http://localhost:8000/reccuring-jobs see the recurring jobs. Have fun triggering them!
+    - Visit http://localhost:8000/reccuring-jobs to see the recurring jobs. Have fun triggering them!

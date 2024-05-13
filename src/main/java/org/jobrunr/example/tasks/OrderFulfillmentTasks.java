@@ -31,9 +31,9 @@ public class OrderFulfillmentTasks {
         orderFulfillmentService.initiateShipment(orderId);
     }
 
-    @Recurring(id = "daily-sales-report", cron = "0 0 * * *", zoneId = "${daily-sales-report.zone-id}")
-    public void generateDailyReport() throws InterruptedException {
-        orderFulfillmentService.generateDailyReport();
+    @Recurring(id = "monthly-sales-report", cron = "0 0 1 * *", zoneId = "${monthly-sales-report.zone-id}")
+    public void generateMonthlySalesReport() throws InterruptedException {
+        orderFulfillmentService.generateMonthlySalesReport();
     }
 
     @Recurring(id = "daily-resupply", cron = "0 0 * * *", zoneId = "${daily-resupply.zone-id}")
