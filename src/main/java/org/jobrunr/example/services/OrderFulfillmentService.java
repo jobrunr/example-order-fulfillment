@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.time.YearMonth;
 import java.util.UUID;
 
 @Service
@@ -28,15 +29,15 @@ public class OrderFulfillmentService {
         Thread.sleep(5000);
     }
 
-    public void generateMonthlySalesReport() throws InterruptedException {
+    public void generateMonthlySalesReport(YearMonth month) throws InterruptedException {
         // TODO aggregate monthly sales, generate PDF and send it to managers
-        LOGGER.info("Sales report: generating monthly sales report on {}", Instant.now());
+        LOGGER.info("Sales report: generating monthly sales report on {} for month {}", Instant.now(), month);
         Thread.sleep(10000);
     }
 
-    public void resupply() throws InterruptedException {
+    public void resupply(String stockLocation) throws InterruptedException {
         // TODO check the stock and contact supplier if needed
-        LOGGER.info("Inventory resupply: resupplying the inventory on {}", Instant.now());
-        Thread.sleep(20000);
+        LOGGER.info("Inventory resupply: resupplying the inventory on {} for stock {}", Instant.now(), stockLocation);
+        Thread.sleep(5000);
     }
 }

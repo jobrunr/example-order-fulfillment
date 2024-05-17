@@ -13,9 +13,7 @@ public class OrderFulfillmentController {
     @GetMapping("/confirm-order")
     public String confirmOrder() {
         UUID orderId = UUID.randomUUID();
-        BackgroundJob.<OrderFulfillmentTasks>enqueue(x -> x.sendOrderConfirmation(orderId));
-        BackgroundJob.<OrderFulfillmentTasks>enqueue(x -> x.notifyWarehouse(orderId));
-        BackgroundJob.<OrderFulfillmentTasks>enqueue(x -> x.initiateShipment(orderId));
+        BackgroundJob.<OrderFulfillmentTasks>enqueue(x -> x.enqueueConfirmedOrderTasks(orderId));
 
         return "Done";
     }
