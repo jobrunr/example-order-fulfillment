@@ -56,7 +56,7 @@ public class OrderFulfillmentTasks {
         JobDashboardProgressBar jobDashboardProgressBar = jobContext.progressBar(stockLocations.size());
         for(String stockLocation : stockLocations) {
             orderFulfillmentService.resupply(stockLocation);
-            jobDashboardProgressBar.increaseByOne();
+            jobDashboardProgressBar.incrementSucceeded();
             jobContext.logger().info(format("Resupplied stock %s", stockLocation));
         }
     }
