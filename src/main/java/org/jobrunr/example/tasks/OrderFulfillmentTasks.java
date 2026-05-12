@@ -34,14 +34,14 @@ public class OrderFulfillmentTasks {
         BackgroundJob.create(of(
                 aJob()
                         .withName(format("order-%s-confirmation", orderId))
-                        .withDetails(() -> orderFulfillmentService.sendOrderConfirmation(orderId)),
+                        .withJobLambda(() -> orderFulfillmentService.sendOrderConfirmation(orderId)),
                 aJob()
                         .withName(format("order-%s-warehouse-notification", orderId))
                         .withAmountOfRetries(20)
-                        .withDetails(() -> orderFulfillmentService.notifyWarehouse(orderId)),
+                        .withJobLambda(() -> orderFulfillmentService.notifyWarehouse(orderId)),
                 aJob()
                         .withName(format("order-%s-shipment-initiation", orderId))
-                        .withDetails(() -> orderFulfillmentService.initiateShipment(orderId))
+                        .withJobLambda(() -> orderFulfillmentService.initiateShipment(orderId))
         ));
     }
 
